@@ -6,11 +6,17 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function guzzleGet(){
-    $client = new \GuzzleHttp\Client();
-    $request = $client->get('http://127.0.0.1:8000/api/produk/');
-    $response = $request->getBody();
-   
-    dd($response);
-}
+    public function guzzleGet()
+    {
+        try {
+            $client = new \GuzzleHttp\Client();
+            $response = $client->get('http://localhost:3000/api/produk/');
+            $body = $response->getBody();
+            $body_array = json_decode($body);
+            
+            dd($body_array);
+        } catch(\Exception $error) {
+            return $error->getMessage();
+        }
+    }
 }
