@@ -12,9 +12,9 @@ class ClientController extends Controller
             $client = new \GuzzleHttp\Client();
             $response = $client->get('http://localhost:3000/api/produk/');
             $body = $response->getBody();
-            $body_array = json_decode($body);
-            
-            dd($body_array);
+            $barang = json_decode($body);
+            return view('produk.index', ['barang'=>$barang['data']]);
+            //dd($body_array);
         } catch(\Exception $error) {
             return $error->getMessage();
         }

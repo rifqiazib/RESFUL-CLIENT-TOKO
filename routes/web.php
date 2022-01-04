@@ -22,6 +22,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/home', [ClientController::class, 'guzzleGet']);
+Route::get('/home', [ClientController::class, 'guzzleGet'])->name('guzzle.index');
 
 require __DIR__.'/auth.php';
