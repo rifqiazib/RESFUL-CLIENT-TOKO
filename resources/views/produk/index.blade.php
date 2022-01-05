@@ -14,27 +14,28 @@
           <p class="mb-5">
            
           </p>
-          <div class="table-responsive">
-          <a href="route()"><button class="btn btn-warning btn-sm">EDIT</button></a>
-            <table id="document_table" class="hover" style="width: 100%;">
+          <div class="table-responsive" >
+          <a href="{{ route('guzzle.form') }}"><button class="btn btn-primary btn-sm">TAMBAH DATA</button></a>
+            <table  id="document_table" class="table" style="width: 100%;" >
               <thead>
                 <tr>
              
                   <th>Nama Produk</th>
                   <th>Jumlah Produk</th>
                   <th>Harga</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
-                @php $no = 1; @endphp
-                @foreach($barang as $item)
+                
+                @foreach($list_produk as $item)
                     <tr>
-                      <td>{{ $item['nama_produk'] }}</td>
-                      <td>{{ $item['jumlah_produk'] }}</td>
-                      <td>{{ $item['harga'] }}</td>
+                      <td> {{$item->nama_produk}} </td>
+                      <td> {{$item->jumlah_produk}} </td>
+                      <td> {{$item->harga}} </td>
                       <td>
-                      <a href="#"><button class="btn btn-warning btn-sm">EDIT</button></a>
-                      <a href="#"><button class="btn btn-danger btn-sm">DELETE</button></a>
+                      <a href="/list-produk/{{$item->id}}"><button class="btn btn-warning btn-sm">EDIT</button></a>
+                      <a href="/list-produk/{{$item->id}}/delete"><button class="btn btn-danger btn-sm">DELETE</button></a>
                       </td>
                     </tr>
                   @endforeach
@@ -48,6 +49,4 @@
   </section><!-- End Counts Section -->
 
 </main><!-- End #main -->  
-
-
 @endsection

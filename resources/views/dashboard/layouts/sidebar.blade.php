@@ -8,7 +8,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item {{ Request::is('dashboard*') ? 'active' : '' }}">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
 </li>
@@ -23,7 +23,7 @@
 
 <!-- Nav Item - Charts -->
 <li class="nav-item {{ Request::is('management-users*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('barang.index') }}">
+    <a class="nav-link" href="{{ route('guzzle.index') }}">
         <i class="fas fa-fw fa-users"></i>
         <span>DATA BARANG</span></a>
 </li>

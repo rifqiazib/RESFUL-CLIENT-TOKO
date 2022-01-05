@@ -22,6 +22,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/home', [ClientController::class, 'guzzleGet'])->name('guzzle.index');
+Route::get('/home',[ClientController::class, 'index'])->name('home.index');
+Route::get('/list-produk', [ClientController::class, 'guzzleGet'])->name('guzzle.index');
+Route::get('/list-produk-form', [ClientController::class, 'guzzlecreate'])->name('guzzle.form');
+Route::post('list-produk-create', [ClientController::class, 'guzzlePost'])->name('guzzle.create');
+Route::get('/list-produk/{id}', [ClientController::class, 'guzzleedit'])->name('guzzle.edit');
+Route::post('/list-produk/{id}/update', [ClientController::class, 'guzzleUpdate'])->name('guzzle.update');
+Route::get('/list-produk/{id}/delete', [ClientController::class, 'guzzleDelete'])->name('guzlle.delete');
 
 require __DIR__.'/auth.php';

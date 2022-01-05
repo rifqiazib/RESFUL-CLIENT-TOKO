@@ -1,0 +1,55 @@
+.ml-1 {
+    margin-left: 0.5rem;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.h-60 {
+    height: 15rem !important;
+}
+
+.my-2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.font-normal {
+    font-style: normal !important;
+}
+
+.form-control:focus {
+    border: 1px solid #ced4da;
+}
+
+.btn.btn-brand {
+    background: #ffc451;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.btn.btn-brand:hover {
+    background: #000;
+    color: #ffc451;
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.block {
+    background-color: #000;
+    height: 75px;
+}

@@ -73,7 +73,12 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        //
+        try {
+            $data = Produk::find($id);
+            return $this->sendResponse(false, 'Daftar produk yang tersedia', $data);
+        } catch(\Exception $error) {
+            return $this->sendResponse(true, $error->getMessage(), null);
+        }
     }
 
     /**
